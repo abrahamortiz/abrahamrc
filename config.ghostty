@@ -1,0 +1,14 @@
+# aesthetics
+background-blur = 20
+background-opacity = 0.95
+macos-titlebar-style = tabs
+macos-window-buttons = hidden
+theme = light:Ayu Light,dark:Ayu Mirage 
+
+# typography
+font-family = "FiraCode Nerd Font Mono"
+font-size = 19
+
+auto-update = check
+auto-update-channel = stable 
+macos-option-as-alt = true

@@ -1,6 +1,6 @@
 # aesthetics
-background-blur = 20
-background-opacity = 0.95
+# background-blur = 20
+# background-opacity = 0.95
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
 theme = light:Ayu Light,dark:Ayu Mirage 

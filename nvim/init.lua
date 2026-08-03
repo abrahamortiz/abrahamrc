@@ -271,6 +271,32 @@ do
   -- NOTE: You can install multiple plugins at once
   vim.pack.add(telescope_plugins)
 
+  -- Search hidden files (dotfiles, dot-directories) in both file and grep pickers,
+  -- while never descending into node_modules or .git.
+  local excluded_dirs = { 'node_modules', '.git' }
+
+  -- Extend Telescope's default rg invocation (used by live_grep, grep_string, ...)
+  local vimgrep_arguments = vim.list_extend({}, require('telescope.config').values.vimgrep_arguments)
+  table.insert(vimgrep_arguments, '--hidden')
+  for _, dir in ipairs(excluded_dirs) do
+    table.insert(vimgrep_arguments, '--glob=!**/' .. dir .. '/*')
+  end
+
+  -- find_files: prefer fd, fall back to rg --files.
+  -- `--hidden` is not listed here: Telescope appends it itself from `hidden = true` below.
+  local find_command
+  if vim.fn.executable 'fd' == 1 then
+    find_command = { 'fd', '--type', 'f', '--color', 'never' }
+    for _, dir in ipairs(excluded_dirs) do
+      vim.list_extend(find_command, { '--exclude', dir })
+    end
+  else
+    find_command = { 'rg', '--files', '--color', 'never' }
+    for _, dir in ipairs(excluded_dirs) do
+      table.insert(find_command, '--glob=!**/' .. dir .. '/*')
+    end
+  end
+
   -- See `:help telescope` and `:help telescope.setup()`
   require('telescope').setup {
     -- You can put your default mappings / updates / etc. in here
@@ -281,7 +307,12 @@ do
     --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
     --   },
     -- },
-    -- pickers = {}
+    defaults = {
+      vimgrep_arguments = vimgrep_arguments,
+    },
+    pickers = {
+      find_files = { hidden = true, find_command = find_command },
+    },
     extensions = {
       ['ui-select'] = { require('telescope.themes').get_dropdown() },
     },

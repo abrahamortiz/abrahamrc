@@ -1,16 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
   "provider": {
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
+    "openrouter": {
       "models": {
-        "qwen3-coder": {
-          "name": "qwen3-coder"
-        }
+        "nvidia/nemotron-3-ultra-550b-a55b:free": {},
+        "cohere/north-mini-code:free": {}
       }
     }
   }

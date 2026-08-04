@@ -4,10 +4,11 @@
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
 theme = light:Ayu Light,dark:Ayu Mirage 
+adjust-cell-height = 10%
 
 # typography
 font-family = "FiraCode Nerd Font Mono"
-font-size = 19
+font-size = 22
 
 auto-update = check
 auto-update-channel = stable 

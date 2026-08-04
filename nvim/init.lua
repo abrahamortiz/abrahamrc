@@ -309,6 +309,7 @@ do
     -- },
     defaults = {
       vimgrep_arguments = vimgrep_arguments,
+      preview = false,
     },
     pickers = {
       find_files = { hidden = true, find_command = find_command },

@@ -5,7 +5,7 @@ adjust-cell-height = 10%
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
 theme = light:Ayu Light,dark:Ayu Mirage 
-title = "👻"
+title = " "
 
 # typography
 font-family = "FiraCode Nerd Font Mono"

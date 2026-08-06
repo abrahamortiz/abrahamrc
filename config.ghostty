@@ -9,8 +9,8 @@ title = " "
 
 # typography
 font-family = "FiraCode Nerd Font Mono"
-font-size = 22
+font-size = 20
 
 auto-update = check
-auto-update-channel = stable 
+auto-update-channel = stable
 macos-option-as-alt = true

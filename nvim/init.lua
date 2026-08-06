@@ -336,6 +336,7 @@ do
   vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
   vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
   vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+  vim.keymap.set('n', '<leader>tm', '<CMD>Markview Toggle<CR>', { desc = 'Toggle `markview`' })
 
   -- Add Telescope-based LSP pickers when an LSP attaches to a buffer.
   -- If you later switch picker plugins, this is where to update these mappings.
@@ -605,6 +606,7 @@ do
         typescript = true,
         lua = true,
         json = true,
+        markdown = true,
         -- python = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -622,6 +624,7 @@ do
       javascript = { 'prettier' },
       typescript = { 'prettier' },
       json = { 'prettier' },
+      markdown = { 'prettier', 'markdownlint' },
       -- rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },

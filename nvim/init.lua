@@ -200,7 +200,7 @@ do
 
   vim.pack.add { gh 'folke/which-key.nvim' }
   require('which-key').setup {
-    delay = 0,
+    delay = 1000,
     preset = 'modern',
     icons = { mappings = vim.g.have_nerd_font },
     spec = {

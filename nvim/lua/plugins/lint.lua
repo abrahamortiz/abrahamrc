@@ -1,10 +1,12 @@
 vim.pack.add { 'https://github.com/mfussenegger/nvim-lint' }
 
 local lint = require 'lint'
+
 lint.linters_by_ft = {
   javascript = { 'eslint_d' },
   typescript = { 'eslint_d' },
   markdown = { 'markdownlint' },
+  go = { 'golangcilint' },
 }
 
 -- To allow other plugins to add linters to require('lint').linters_by_ft,
@@ -42,6 +44,7 @@ lint.linters_by_ft = {
 -- Create autocommand which carries out the actual linting
 -- on the specified events.
 local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
+
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
   group = lint_augroup,
   callback = function()

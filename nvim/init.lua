@@ -19,6 +19,8 @@ do
   vim.o.splitright = true
   vim.o.splitbelow = true
   vim.o.list = true
+  vim.o.tabstop = 2
+  vim.o.shiftwidth = 2
 
   vim.opt.listchars = {
     tab = '» ',
@@ -401,7 +403,7 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
-    -- gopls = {},
+    gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
     --
@@ -500,6 +502,7 @@ do
         lua = true,
         json = true,
         markdown = true,
+        go = true,
         -- python = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -518,6 +521,7 @@ do
       typescript = { 'prettier' },
       json = { 'prettier' },
       markdown = { 'prettier', 'markdownlint' },
+      go = { 'gofmt' },
       -- rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
@@ -622,6 +626,7 @@ do
     'bash',
     'c',
     'diff',
+    'go',
     'html',
     'lua',
     'luadoc',

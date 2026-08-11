@@ -75,14 +75,14 @@ mode: session
 
 # Custom tmux pane layout (mutually exclusive with 'windows').
 # Default: Two-pane layout with shell and clear command.
-panes:
-  - command: nvim
-    name: nvim
-    focus: true
-  - split: horizontal
-    command: claude
-  - split: vertical
-    size: 3
+# panes:
+#   - command: nvim
+#     name: nvim
+#     focus: true
+#   - split: horizontal
+#     command: claude
+#   - split: vertical
+#     size: 3
 
 # Multiple windows per session (session mode only, mutually exclusive with 'panes').
 # Each window can have its own pane layout. Unnamed windows get tmux's

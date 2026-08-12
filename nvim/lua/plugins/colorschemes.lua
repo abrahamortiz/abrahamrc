@@ -8,4 +8,4 @@ require('ayu').setup {
   end,
 }
 
-vim.cmd.colorscheme 'ayu-light'
+vim.cmd.colorscheme 'ayu-mirage'

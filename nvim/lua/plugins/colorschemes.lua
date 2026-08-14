@@ -1,4 +1,4 @@
-vim.pack.add { 'https://github.com/shatur/neovim-ayu' }
+vim.pack.add { 'https://github.com/shatur/neovim-ayu', { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' } }
 
 require('ayu').setup {
   overrides = function()
@@ -8,4 +8,8 @@ require('ayu').setup {
   end,
 }
 
-vim.cmd.colorscheme 'ayu-mirage'
+require('catppuccin').setup {
+  transparent_background = true,
+}
+
+vim.cmd.colorscheme 'catppuccin-frappe'

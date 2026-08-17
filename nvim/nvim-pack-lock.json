@@ -38,10 +38,6 @@
       "rev": "a30e54e51e7480d7060c8c8185f2a963ad3518b4",
       "src": "https://github.com/brianhuster/live-preview.nvim"
     },
-    "markdown-preview.nvim": {
-      "rev": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee",
-      "src": "https://github.com/iamcco/markdown-preview.nvim"
-    },
     "markview.nvim": {
       "rev": "2471f4097f8561a6880a0fe05ee0f21cbc82b374",
       "src": "https://github.com/OXY2DEV/markview.nvim"
@@ -90,10 +86,6 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "render-markdown.nvim": {
-      "rev": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6",
-      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "telescope-fzf-native.nvim": {
       "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",

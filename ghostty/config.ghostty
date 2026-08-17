@@ -1,10 +1,10 @@
 # aesthetics
 background-blur = 20
-background-opacity = 0.95
+background-opacity = 0.85
 adjust-cell-height = 10%
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
-theme = light:Catppuccin Latte,dark:Catppuccin Frappe 
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha 
 title = " "
 config-file = ~/.config/ghostty/config.ghostty
 

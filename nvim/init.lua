@@ -21,6 +21,7 @@ do
   vim.o.list = true
   vim.o.tabstop = 2
   vim.o.shiftwidth = 2
+  vim.o.diffopt = 'vertical'
 
   vim.opt.listchars = {
     tab = '» ',

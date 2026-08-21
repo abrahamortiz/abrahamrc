@@ -1,6 +1,6 @@
 # aesthetics
-background-blur = 20
-background-opacity = 0.85
+background-blur = 15
+background-opacity = 0.95
 adjust-cell-height = 10%
 macos-titlebar-style = tabs
 macos-window-buttons = hidden

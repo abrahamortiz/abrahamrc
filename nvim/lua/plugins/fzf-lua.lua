@@ -1,5 +1,7 @@
 vim.pack.add { 'https://github.com/ibhagwan/fzf-lua' }
 
+require('fzf-lua.utils').nbsp = '\194\160'
+
 local fzf = require 'fzf-lua'
 
 local excluded_dirs = { 'node_modules', '.git' }
@@ -10,7 +12,6 @@ local rg_excludes = table.concat(vim.tbl_map(function(dir) return '--glob=!' .. 
 
 fzf.setup {
   ui_select = {},
-  nbsp = '\194\160',
   winopts = {
     preview = { hidden = false },
   },

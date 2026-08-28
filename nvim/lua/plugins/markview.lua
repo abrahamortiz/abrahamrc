@@ -5,3 +5,5 @@ require('markview').setup {
     icon_provider = 'mini',
   },
 }
+
+vim.keymap.set('n', '<leader>tm', '<CMD>Markview Toggle<CR>', { desc = 'Toggle `markview`' })

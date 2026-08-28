@@ -17,7 +17,7 @@ editing, LSP and a polished status bar.
 
 - **Editing**: mini.ai, mini.surround, nvim-autopairs, Luasnip, guess-indent
 - **LSP**: mason, mason-lspconfig, blink.cmp, conform (formatting), nvim-lint
-- **Search**: Telescope with fzf, ui-select extensions
+- **Search**: fzf-lua (files, grep, LSP pickers and `vim.ui.select`)
 - **Treesitter**: auto-installs parsers for detected filetypes
 - **Plugins**: gitsigns, which-key, todo-comments, oil, markview, claudecode,
   fidget, mini.icons

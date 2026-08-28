@@ -44,7 +44,7 @@ NVIM_APPNAME=abrahamortiz/abrahamrc/nvim nvim
 
 ### fuzzy-finder
 
-+ [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
++ [ibhagwan/fzf-lua](https://dotfyle.com/plugins/ibhagwan/fzf-lua)
 
 ### git
 
@@ -68,10 +68,6 @@ NVIM_APPNAME=abrahamortiz/abrahamrc/nvim nvim
 ### markdown-and-latex
 
 + [OXY2DEV/markview.nvim](https://dotfyle.com/plugins/OXY2DEV/markview.nvim)
-
-### nvim-dev
-
-+ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 
 ### snippet
 

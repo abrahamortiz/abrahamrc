@@ -158,33 +158,6 @@ end
 -- LSP keymaps, server configuration, Mason tools installations
 -- ============================================================
 do
-  -- [[ LSP Configuration ]]
-  -- Brief aside: **What is LSP?**
-  --
-  -- LSP is an initialism you've probably heard, but might not understand what it is.
-  --
-  -- LSP stands for Language Server Protocol. It's a protocol that helps editors
-  -- and language tooling communicate in a standardized fashion.
-  --
-  -- In general, you have a "server" which is some tool built to understand a particular
-  -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
-  -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
-  -- processes that communicate with some "client" - in this case, Neovim!
-  --
-  -- LSP provides Neovim with features like:
-  --  - Go to definition
-  --  - Find references
-  --  - Autocompletion
-  --  - Symbol Search
-  --  - and more!
-  --
-  -- Thus, Language Servers are external tools that must be installed separately from
-  -- Neovim. This is where `mason` and related plugins come into play.
-  --
-  -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
-  -- and elegantly composed help section, `:help lsp-vs-treesitter`
-
-  -- Useful status updates for LSP.
   vim.pack.add { gh 'j-hui/fidget.nvim' }
   require('fidget').setup {}
 
@@ -361,7 +334,6 @@ do
     default_format_opts = {
       lsp_format = 'fallback', -- Use external formatters if configured below, otherwise use LSP formatting. Set to `false` to disable LSP formatting entirely.
     },
-    -- You can also specify external formatters in here.
     formatters_by_ft = {
       lua = { 'stylua' },
       javascript = { 'prettier' },
@@ -369,12 +341,6 @@ do
       json = { 'prettier' },
       markdown = { 'markdownlint-cli2' },
       go = { 'gofmt' },
-      -- rust = { 'rustfmt' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
   }
 
@@ -396,61 +362,19 @@ do
   vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' } }
   require('blink.cmp').setup {
     keymap = {
-      -- 'default' (recommended) for mappings similar to built-in completions
-      --   <c-y> to accept ([y]es) the completion.
-      --    This will auto-import if your LSP supports it.
-      --    This will expand snippets if the LSP sent a snippet.
-      -- 'super-tab' for tab to accept
-      -- 'enter' for enter to accept
-      -- 'none' for no mappings
-      --
-      -- For an understanding of why the 'default' preset is recommended,
-      -- you will need to read `:help ins-completion`
-      --
-      -- No, but seriously. Please read `:help ins-completion`, it is really good!
-      --
-      -- All presets have the following mappings:
-      -- <tab>/<s-tab>: move to right/left of your snippet expansion
-      -- <c-space>: Open menu or open docs if already open
-      -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
-      -- <c-e>: Hide menu
-      -- <c-k>: Toggle signature help
-      --
-      -- See `:help blink-cmp-config-keymap` for defining your own keymap
       preset = 'default',
-
-      -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-      --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
     },
-
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono',
     },
-
     completion = {
-      -- By default, you may press `<c-space>` to show the documentation.
-      -- Optionally, set `auto_show = true` to show the documentation after a delay.
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
-
     sources = {
       default = { 'lsp', 'path', 'snippets' },
     },
-
     snippets = { preset = 'luasnip' },
-
-    -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
-    -- which automatically downloads a prebuilt binary when enabled.
-    --
-    -- By default, we use the Lua implementation instead, but you may enable
-    -- the rust implementation via `'prefer_rust_with_warning'`
-    --
-    -- See `:help blink-cmp-config-fuzzy` for more information
     fuzzy = { implementation = 'prefer_rust_with_warning' },
-
-    -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true },
   }
 end

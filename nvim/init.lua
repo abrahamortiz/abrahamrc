@@ -186,8 +186,10 @@ do
       --
       -- When you move your cursor, the highlights will be cleared (the second autocommand).
       local client = vim.lsp.get_client_by_id(event.data.client_id)
+
       if client and client:supports_method('textDocument/documentHighlight', event.buf) then
         local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
+
         vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
           buffer = event.buf,
           group = highlight_augroup,
@@ -301,47 +303,6 @@ do
     vim.lsp.config(name, server)
     vim.lsp.enable(name)
   end
-end
-
--- ============================================================
--- SECTION 7: FORMATTING
--- conform.nvim setup and keymap
--- ============================================================
-do
-  -- [[ Formatting ]]
-  vim.pack.add { gh 'stevearc/conform.nvim' }
-  require('conform').setup {
-    notify_on_error = true,
-    format_on_save = function(bufnr)
-      -- You can specify filetypes to autoformat on save here:
-      local enabled_filetypes = {
-        typescript = true,
-        lua = true,
-        json = true,
-        markdown = true,
-        go = true,
-        -- python = true,
-      }
-      if enabled_filetypes[vim.bo[bufnr].filetype] then
-        return { timeout_ms = 500 }
-      else
-        return nil
-      end
-    end,
-    default_format_opts = {
-      lsp_format = 'fallback', -- Use external formatters if configured below, otherwise use LSP formatting. Set to `false` to disable LSP formatting entirely.
-    },
-    formatters_by_ft = {
-      lua = { 'stylua' },
-      javascript = { 'prettier' },
-      typescript = { 'prettier' },
-      json = { 'prettier' },
-      markdown = { 'markdownlint-cli2' },
-      go = { 'gofmt' },
-    },
-  }
-
-  vim.keymap.set({ 'n', 'v' }, '<leader>f', function() require('conform').format { async = true } end, { desc = '[F]ormat buffer' })
 end
 
 -- ============================================================

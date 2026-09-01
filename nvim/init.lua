@@ -33,7 +33,6 @@ do
   vim.o.cursorline = true
   vim.o.scrolloff = 8
   vim.o.confirm = true
-  --  For more options, you can see `:help option-list`
 end
 
 --- Keymaps & Autocmds -----------------------
@@ -88,7 +87,7 @@ do
   })
 end
 
--- --- Plugin Manager ------------------------
+--- Plugin Manager ---------------------------
 do
   local function run_build(name, cmd, cwd)
     local result = vim.system(cmd, { cwd = cwd }):wait()
@@ -129,34 +128,7 @@ end
 
 local function gh(repo) return 'https://github.com/' .. repo end
 
---- mini.nvim plugins ------------------------
-do
-  vim.pack.add { gh 'nvim-mini/mini.nvim' }
-
-  if vim.g.have_nerd_font then
-    require('mini.icons').setup()
-    MiniIcons.mock_nvim_web_devicons()
-  end
-
-  require('mini.ai').setup {
-    mappings = {
-      around_next = 'aa',
-      inside_next = 'ii',
-    },
-    n_lines = 500,
-  }
-
-  local statusline = require 'mini.statusline'
-  statusline.setup { use_icons = vim.g.have_nerd_font }
-
-  ---@diagnostic disable-next-line: duplicate-set-field
-  statusline.section_location = function() return '%2l:%-2v' end
-end
-
--- ============================================================
--- SECTION 6: LSP
--- LSP keymaps, server configuration, Mason tools installations
--- ============================================================
+--- LSP --------------------------------------
 do
   --  This function gets run when an LSP attaches to a particular buffer.
   --    That is to say, every time a new file is opened that is associated with
@@ -164,6 +136,7 @@ do
   --    function will be executed to configure the current buffer
   vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+
     callback = function(event)
       local map = function(keys, func, desc, mode)
         mode = mode or 'n'
@@ -329,7 +302,7 @@ do
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets' },
+      default = { 'lsp', 'buffer', 'snippets', 'path', 'omni' },
     },
     snippets = { preset = 'luasnip' },
     fuzzy = { implementation = 'prefer_rust_with_warning' },

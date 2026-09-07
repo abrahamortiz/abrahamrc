@@ -75,28 +75,28 @@ mode: session
 
 # Custom tmux pane layout (mutually exclusive with 'windows').
 # Default: Two-pane layout with shell and clear command.
-# panes:
-#   - command: nvim
-#     name: nvim
-#     focus: true
-#   - split: horizontal
-#     command: claude
-#   - split: vertical
-#     size: 3
+panes:
+  - command: nvim
+    name: nvim
+    focus: true
+  - split: horizontal
+    command: claude
+  - split: vertical
+    size: 3
 
 # Multiple windows per session (session mode only, mutually exclusive with 'panes').
 # Each window can have its own pane layout. Unnamed windows get tmux's
 # automatic naming based on the running command.
-windows:
-  - name: claude
-    panes:
-      - command: <agent>
-  - name: nvim
-    panes:
-      - command: nvim
-  - name: node
-    panes:
-      - command: nvm use && pnpm i
+# windows:
+#   - name: claude
+#     panes:
+#       - command: <agent>
+#   - name: nvim
+#     panes:
+#       - command: nvim
+#   - name: node
+#     panes:
+#       - command: nvm use && pnpm i
 
 # Auto-apply agent status icons to tmux window format.
 # Default: true

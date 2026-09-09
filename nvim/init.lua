@@ -200,6 +200,7 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
+    graphql = {},
     gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
@@ -328,6 +329,7 @@ do
     'c',
     'diff',
     'go',
+    'graphql',
     'html',
     'lua',
     'luadoc',

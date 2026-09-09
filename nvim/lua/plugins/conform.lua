@@ -5,6 +5,7 @@ require('conform').setup {
   format_on_save = function(bufnr)
     local enabled_filetypes = {
       typescript = true,
+      graphql = true,
       lua = true,
       json = true,
       markdown = true,
@@ -23,6 +24,7 @@ require('conform').setup {
     lua = { 'stylua' },
     javascript = { 'prettier' },
     typescript = { 'prettier' },
+    graphql = { 'prettier' },
     json = { 'prettier' },
     markdown = { 'markdownlint-cli2' },
     go = { 'gofmt' },

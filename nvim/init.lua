@@ -123,7 +123,7 @@ do
     end,
   })
 
-  vim.keymap.set('n', '<leader>pu', function() vim.pack.update(nil, { offline = true }) end, { desc = '[P]lugins [U]pdate' })
+  vim.keymap.set('n', '<leader>pu', function() vim.pack.update() end, { desc = '[P]lugins [U]pdate' })
 end
 
 local function gh(repo) return 'https://github.com/' .. repo end

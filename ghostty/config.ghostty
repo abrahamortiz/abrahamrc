@@ -7,6 +7,7 @@ macos-window-buttons = hidden
 theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 title = " "
 config-file = ~/.config/ghostty/config.ghostty
+window-colorspace = display-p3
 
 # typography
 font-family = "JetBrainsMono Nerd Font Mono"

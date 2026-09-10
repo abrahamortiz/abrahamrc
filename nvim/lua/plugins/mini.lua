@@ -15,6 +15,38 @@ require('mini.ai').setup {
 
 require('mini.pairs').setup {}
 
+require('mini.clue').setup {
+  triggers = {
+    { mode = 'n', keys = '<Leader>' },
+    { mode = 'x', keys = '<Leader>' },
+    { mode = 'n', keys = 'g' },
+    { mode = 'x', keys = 'g' },
+    { mode = 'n', keys = "'" },
+    { mode = 'n', keys = '`' },
+    { mode = 'x', keys = "'" },
+    { mode = 'x', keys = '`' },
+    { mode = 'n', keys = '"' },
+    { mode = 'x', keys = '"' },
+    { mode = 'i', keys = '<C-r>' },
+    { mode = 'c', keys = '<C-r>' },
+  },
+  clues = {
+    { mode = 'n', keys = '<Leader>s', desc = '[S]earch' },
+    { mode = 'n', keys = '<Leader>t', desc = '[T]oggle' },
+    { mode = 'n', keys = '<Leader>h', desc = 'Git [H]unk' },
+    { mode = 'n', keys = '<Leader>p', desc = '[P]lugins' },
+    { mode = 'n', keys = 'gr', desc = 'LSP Actions' },
+  },
+}
+
+MiniClue.gen_clues.builtin_completion()
+MiniClue.gen_clues.builtin_completion()
+MiniClue.gen_clues.g()
+MiniClue.gen_clues.marks()
+MiniClue.gen_clues.registers()
+MiniClue.gen_clues.windows()
+MiniClue.gen_clues.z()
+
 require('mini.diff').setup {
   view = {
     style = 'sign',

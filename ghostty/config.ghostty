@@ -8,6 +8,9 @@ theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 title = " "
 config-file = ~/.config/ghostty/config.ghostty
 window-colorspace = display-p3
+alpha-blending = linear-corrected
+font-thicken = true
+font-thicken-strength = 70
 
 # typography
 font-family = "JetBrainsMono Nerd Font Mono"

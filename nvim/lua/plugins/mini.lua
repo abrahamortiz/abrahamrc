@@ -15,6 +15,17 @@ require('mini.ai').setup {
 
 require('mini.pairs').setup {}
 
+require('mini.diff').setup {
+  view = {
+    style = 'sign',
+    signs = { add = '+', change = '~', delete = '_' },
+  },
+}
+
+require('mini.notify').setup {
+  window = { config = { border = 'rounded' } },
+}
+
 local statusline = require 'mini.statusline'
 statusline.setup { use_icons = vim.g.have_nerd_font }
 

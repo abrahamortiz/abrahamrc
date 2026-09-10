@@ -5,9 +5,9 @@ require('catppuccin').setup {
   transparent_background = true,
   integrations = {
     aerial = true,
-    diffview = true,
     markview = true,
     mason = true,
+    mini = true,
   },
 }
 

@@ -15,8 +15,19 @@ require('mini.ai').setup {
 
 require('mini.pairs').setup {}
 
+require('mini.diff').setup {
+  view = {
+    style = 'sign',
+    signs = { add = '+', change = '~', delete = '_' },
+  },
+}
+
 local statusline = require 'mini.statusline'
 statusline.setup { use_icons = vim.g.have_nerd_font }
 
 ---@diagnostic disable-next-line: duplicate-set-field
 statusline.section_location = function() return '%2l:%-2v' end
+
+-- Git diff keymaps
+vim.keymap.set('n', ']c', function() MiniDiff.goto_hunk 'next' end, { desc = 'Next git change' })
+vim.keymap.set('n', '[c', function() MiniDiff.goto_hunk 'prev' end, { desc = 'Previous git change' })

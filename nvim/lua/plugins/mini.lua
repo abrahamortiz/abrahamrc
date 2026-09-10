@@ -1,7 +1,7 @@
 vim.pack.add { 'https://github.com/nvim-mini/mini.nvim' }
 
 if vim.g.have_nerd_font then
-  require('mini.icons').setup()
+  require('mini.icons').setup {}
   MiniIcons.mock_nvim_web_devicons()
 end
 
@@ -14,6 +14,8 @@ require('mini.ai').setup {
 }
 
 require('mini.pairs').setup {}
+
+require('mini.surround').setup {}
 
 require('mini.clue').setup {
   triggers = {
@@ -58,11 +60,17 @@ require('mini.notify').setup {
   window = { config = { border = 'rounded' } },
 }
 
+require('mini.bufremove').setup {}
+
 local statusline = require 'mini.statusline'
 statusline.setup { use_icons = vim.g.have_nerd_font }
 
 ---@diagnostic disable-next-line: duplicate-set-field
 statusline.section_location = function() return '%2l:%-2v' end
+
+-- Keymaps for mini modules
+vim.keymap.set('n', '<leader>bd', '<CMD>lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
+vim.keymap.set('n', '<leader>bw', '<CMD>lua MiniBufremove.wipeout()<CR>', { desc = '[B]uffer [W]ipeout' })
 
 -- Git diff keymaps
 vim.keymap.set('n', ']c', function() MiniDiff.goto_hunk 'next' end, { desc = 'Next git change' })

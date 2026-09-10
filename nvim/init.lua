@@ -24,7 +24,7 @@ do
   vim.o.diffopt = 'vertical'
 
   vim.opt.listchars = {
-    tab = '» ',
+    tab = '  ',
     trail = '·',
     nbsp = '␣',
   }

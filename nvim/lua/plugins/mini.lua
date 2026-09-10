@@ -22,6 +22,10 @@ require('mini.diff').setup {
   },
 }
 
+require('mini.notify').setup {
+  window = { config = { border = 'rounded' } },
+}
+
 local statusline = require 'mini.statusline'
 statusline.setup { use_icons = vim.g.have_nerd_font }
 

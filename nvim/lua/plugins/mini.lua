@@ -49,13 +49,6 @@ MiniClue.gen_clues.registers()
 MiniClue.gen_clues.windows()
 MiniClue.gen_clues.z()
 
-require('mini.diff').setup {
-  view = {
-    style = 'sign',
-    signs = { add = '+', change = '~', delete = '_' },
-  },
-}
-
 require('mini.notify').setup {
   window = { config = { border = 'rounded' } },
 }
@@ -71,7 +64,3 @@ statusline.section_location = function() return '%2l:%-2v' end
 -- Keymaps for mini modules
 vim.keymap.set('n', '<leader>bd', '<CMD>lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
 vim.keymap.set('n', '<leader>bw', '<CMD>lua MiniBufremove.wipeout()<CR>', { desc = '[B]uffer [W]ipeout' })
-
--- Git diff keymaps
-vim.keymap.set('n', ']c', function() MiniDiff.goto_hunk 'next' end, { desc = 'Next git change' })
-vim.keymap.set('n', '[c', function() MiniDiff.goto_hunk 'prev' end, { desc = 'Previous git change' })

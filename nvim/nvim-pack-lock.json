@@ -71,10 +71,6 @@
       "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
     },
-    "overseer.nvim": {
-      "rev": "a93d9f6d6defdac4bcd6d2c8ba988650e42e0a0e",
-      "src": "https://github.com/stevearc/overseer.nvim"
-    },
     "zen-mode.nvim": {
       "rev": "8564ce6d29ec7554eb9df578efa882d33b3c23a7",
       "src": "https://github.com/folke/zen-mode.nvim"

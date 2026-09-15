@@ -30,7 +30,6 @@ tmux config using the TPM plugin manager.
 - **Plugins**: tmux-sensible, tmux-resurrect, tmux-cpu, tmux-battery
 - **Status bar**: session name, color-coded CPU/BAT usage, clock and date
 - **Key bindings**: `C-a` prefix, vi-style pane navigation/resizing, `-`/`|` splits
-- `g` opens lazygit in a popup following the current pane's cwd
 
 ## Installation
 

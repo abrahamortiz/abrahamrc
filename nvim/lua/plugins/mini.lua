@@ -15,8 +15,6 @@ require('mini.ai').setup {
 
 require('mini.pairs').setup {}
 
-require('mini.surround').setup {}
-
 require('mini.clue').setup {
   triggers = {
     { mode = 'n', keys = '<Leader>' },

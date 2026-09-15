@@ -202,6 +202,7 @@ do
     -- clangd = {},
     graphql = {},
     gopls = {},
+    terraformls = {},
     -- pyright = {},
     -- rust_analyzer = {},
     --

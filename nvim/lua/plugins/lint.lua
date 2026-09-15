@@ -6,6 +6,7 @@ lint.linters_by_ft = {
   javascript = { 'eslint_d' },
   typescript = { 'eslint_d' },
   go = { 'golangcilint' },
+  terraform = { 'tflint' },
 }
 
 -- To allow other plugins to add linters to require('lint').linters_by_ft,

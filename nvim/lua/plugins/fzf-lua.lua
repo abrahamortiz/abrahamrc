@@ -64,7 +64,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Jump to the definition of the word under your cursor.
     -- This is where a variable was first declared, or where a function is defined, etc.
     -- To jump back, press `<C-t>`.
-    vim.keymap.set('n', 'grd', fzf.lsp_definitions, { buffer = buf, desc = '[G]oto [D]efinition' })
+    vim.keymap.set('n', 'grd', function()
+      fzf.lsp_definitions {
+        -- `jump1_action` covers the single-result case, where the picker is skipped entirely.
+        jump1_action = fzf.actions.file_vsplit,
+        actions = { ['enter'] = fzf.actions.file_vsplit },
+      }
+    end, { buffer = buf, desc = '[G]oto [D]efinition (vsplit)' })
 
     -- Fuzzy find all the symbols in your current document.
     -- Symbols are things like variables, functions, types, etc.

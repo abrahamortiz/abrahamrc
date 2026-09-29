@@ -13,7 +13,7 @@ font-thicken = true
 font-thicken-strength = 70
 
 # typography
-font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "MesloLGS Nerd Font Mono"
 font-size = 19
 
 auto-update = check

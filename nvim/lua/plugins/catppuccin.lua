@@ -4,6 +4,8 @@ require('catppuccin').setup {
   auto_integrations = true,
   transparent_background = true,
   integrations = {
+    aerial = true,
+    alpha = true,
     fzf = true,
     gitsigns = true,
     markview = true,

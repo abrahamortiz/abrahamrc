@@ -11,6 +11,9 @@ local fd_excludes = table.concat(vim.tbl_map(function(dir) return '--exclude ' .
 local rg_excludes = table.concat(vim.tbl_map(function(dir) return '--glob=!' .. dir end, excluded_dirs), ' ')
 
 fzf.setup {
+  -- Set to `true` to automatically generate an fzf's colorscheme from
+  -- Neovim's current colorscheme:
+  fzf_colors = true,
   ui_select = {},
   winopts = {
     preview = { hidden = false },

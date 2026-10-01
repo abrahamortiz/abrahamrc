@@ -7,7 +7,6 @@ macos-window-buttons = hidden
 # theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 theme = light:Kanagawa Lotus,dark:Kanagawa Wave
 title = "👻 Ghostty"
-config-file = ~/.config/ghostty/config.ghostty
 window-colorspace = display-p3
 alpha-blending = linear-corrected
 font-thicken = true

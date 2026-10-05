@@ -14,7 +14,7 @@ font-thicken-strength = 70
 
 # typography
 font-family = "MesloLGS Nerd Font Mono"
-font-size = 19
+font-size = 18
 
 auto-update = check
 auto-update-channel = stable

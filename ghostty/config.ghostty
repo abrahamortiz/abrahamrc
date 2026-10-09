@@ -1,20 +1,20 @@
 # aesthetics
 background-blur = 15
-background-opacity = 0.95
+background-opacity = 0.9
 adjust-cell-height = 10%
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
 # theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 theme = light:Kanagawa Lotus,dark:Kanagawa Wave
 title = "👻 Ghostty"
-window-colorspace = display-p3
+window-colorspace = srgb
 alpha-blending = linear-corrected
 font-thicken = true
 font-thicken-strength = 70
 
 # typography
 font-family = "MesloLGS Nerd Font Mono"
-font-size = 18
+font-size = 16
 
 auto-update = check
 auto-update-channel = stable

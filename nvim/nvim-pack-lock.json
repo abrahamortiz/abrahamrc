@@ -51,7 +51,7 @@
       "src": "https://github.com/brianhuster/live-preview.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "b3298993d55fa194279b5eb9dbfb3a43da65cadf",
+      "rev": "e17625cdc8c2650787467398e02c5d63a2cde966",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "fa9037326e9996381e34a14b6350e18168618532",
+      "rev": "0513ad9ada655a07af321c129b69dafaf9e63d80",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-lint": {
@@ -71,7 +71,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "db68de3575fff9dd9bb78b34c8371759ed35fe34",
+      "rev": "c59fc922f718fa055f69f5f3bc888f23211571eb",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {

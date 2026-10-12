@@ -88,15 +88,16 @@ mode: session
 # Each window can have its own pane layout. Unnamed windows get tmux's
 # automatic naming based on the running command.
 windows:
-  - name: nvim
-    panes:
-      - command: nvim
-  - name: claude
-    panes:
-      - command: <agent>
   - name: lazygit
     panes:
       - command: lazygit
+  - name: nvim
+    panes:
+      - command: nvim
+        focus: true
+      - split: horizontal
+        size: 32
+        command: <agent>
 
 # Auto-apply agent status icons to tmux window format.
 # Default: true

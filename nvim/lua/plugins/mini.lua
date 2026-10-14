@@ -51,13 +51,34 @@ require('mini.notify').setup {
   window = { config = { border = 'rounded' } },
 }
 
-require('mini.bufremove').setup {}
+require('mini.bufremove').setup()
 
-local statusline = require 'mini.statusline'
-statusline.setup { use_icons = vim.g.have_nerd_font }
+require('mini.statusline').setup {
+  content = {
+    active = function()
+      local mode, mode_hl = MiniStatusline.section_mode { trunc_width = 120 }
+      local git = MiniStatusline.section_git { trunc_width = 40 }
+      local diff = MiniStatusline.section_diff { trunc_width = 75 }
+      local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 75 }
+      local filename = MiniStatusline.section_filename { trunc_width = math.huge }
+      local fileinfo = MiniStatusline.section_fileinfo { trunc_width = math.huge }
+      local search = MiniStatusline.section_searchcount { trunc_width = 75 }
+      local location = MiniStatusline.section_location { trunc_width = math.huge }
 
----@diagnostic disable-next-line: duplicate-set-field
-statusline.section_location = function() return '%2l:%-2v' end
+      return MiniStatusline.combine_groups {
+        { hl = mode_hl, strings = { mode } },
+        { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics } },
+        '%<', -- Mark general truncate point
+        { hl = 'MiniStatuslineFilename', strings = { filename } },
+        '%=', -- End left alignment
+        { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
+        { hl = mode_hl, strings = { search, location } },
+      }
+    end,
+    inactive = nil,
+  },
+  use_icons = vim.g.have_nerd_font,
+}
 
 -- Keymaps for mini modules
 vim.keymap.set('n', '<leader>bd', '<CMD>lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })

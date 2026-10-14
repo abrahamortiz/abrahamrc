@@ -10,7 +10,7 @@ font-thicken = true
 font-thicken-strength = 70
 
 # background-image
-background-image = /Users/abraham.ortiz/Pictures/kanagawa.jpg
+background-image = /Users/abraham/Pictures/background.png
 background-image-opacity = 0.01
 background-image-fit = cover
 

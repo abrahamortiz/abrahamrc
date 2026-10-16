@@ -96,7 +96,7 @@ windows:
       - command: nvim
         focus: true
       - split: horizontal
-        size: 32
+        percentage: 40
         command: <agent>
 
 # Auto-apply agent status icons to tmux window format.

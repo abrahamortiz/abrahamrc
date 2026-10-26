@@ -16,7 +16,7 @@ fzf.setup {
   fzf_colors = true,
   ui_select = {},
   winopts = {
-    preview = { hidden = false },
+    preview = { hidden = true },
   },
   files = {
     hidden = true,

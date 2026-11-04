@@ -7,6 +7,7 @@ vim.loader.enable()
 require 'config.options'
 
 require 'config.autocmds'
+require 'config.commands'
 require 'config.keymaps'
 
 -- Configure the plugin manager before any plugin is added.

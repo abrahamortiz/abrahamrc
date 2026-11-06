@@ -29,5 +29,6 @@ vim.opt.listchars = {
 }
 
 vim.o.inccommand = 'split'
+vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.confirm = true

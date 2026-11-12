@@ -13,7 +13,11 @@ require('mini.ai').setup {
   n_lines = 500,
 }
 
-require('mini.pairs').setup {}
+require('mini.pairs').setup {
+  mappings = {
+    ['`'] = false, -- Do not auto-close backticks
+  },
+}
 
 require('mini.clue').setup {
   triggers = {

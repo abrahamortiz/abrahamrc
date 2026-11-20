@@ -5,13 +5,7 @@ if vim.g.have_nerd_font then
   MiniIcons.mock_nvim_web_devicons()
 end
 
-require('mini.ai').setup {
-  mappings = {
-    around_next = 'aa',
-    inside_next = 'ii',
-  },
-  n_lines = 500,
-}
+require('mini.ai').setup {}
 
 require('mini.pairs').setup {}
 
@@ -51,7 +45,7 @@ require('mini.notify').setup {
   window = { config = { border = 'rounded' } },
 }
 
-require('mini.bufremove').setup()
+require('mini.bufremove').setup {}
 
 require('mini.statusline').setup {
   content = {

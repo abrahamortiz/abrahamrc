@@ -1,5 +1,7 @@
 # aesthetics
 adjust-cell-height = 10%
+background-opacity = 0.85
+background-blur = 10
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
 theme = light:Kanagawa Lotus,dark:Kanagawa Wave
@@ -8,11 +10,6 @@ window-colorspace = srgb
 alpha-blending = linear-corrected
 font-thicken = true
 font-thicken-strength = 70
-
-# background-image
-background-image = /Users/abraham.ortiz/Pictures/kanagawa.jpg
-background-image-opacity = 0.01
-background-image-fit = cover
 
 # typography
 font-family = "MesloLGS Nerd Font Mono"
